@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		149D699525F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */; };
+		149D699625F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */; };
+		149D699725F0C4EB0034D30C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D698325F0C4EA0034D30C /* ContentView.swift */; };
+		149D699825F0C4EB0034D30C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D698325F0C4EA0034D30C /* ContentView.swift */; };
+		149D699925F0C4EB0034D30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 149D698425F0C4EB0034D30C /* Assets.xcassets */; };
+		149D699A25F0C4EB0034D30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 149D698425F0C4EB0034D30C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euclidean_SequencerApp.swift; sourceTree = "<group>"; };
+		149D698325F0C4EA0034D30C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		149D698425F0C4EB0034D30C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		149D698925F0C4EB0034D30C /* Euclidean Sequencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Euclidean Sequencer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		149D698C25F0C4EB0034D30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		149D699125F0C4EB0034D30C /* Euclidean Sequencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Euclidean Sequencer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		149D699325F0C4EB0034D30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		149D699425F0C4EB0034D30C /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		149D698625F0C4EB0034D30C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		149D698E25F0C4EB0034D30C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		149D697C25F0C4EA0034D30C = {
+			isa = PBXGroup;
+			children = (
+				149D698125F0C4EA0034D30C /* Shared */,
+				149D698B25F0C4EB0034D30C /* iOS */,
+				149D699225F0C4EB0034D30C /* macOS */,
+				149D698A25F0C4EB0034D30C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		149D698125F0C4EA0034D30C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */,
+				149D698325F0C4EA0034D30C /* ContentView.swift */,
+				149D698425F0C4EB0034D30C /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		149D698A25F0C4EB0034D30C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				149D698925F0C4EB0034D30C /* Euclidean Sequencer.app */,
+				149D699125F0C4EB0034D30C /* Euclidean Sequencer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		149D698B25F0C4EB0034D30C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				149D698C25F0C4EB0034D30C /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		149D699225F0C4EB0034D30C /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				149D699325F0C4EB0034D30C /* Info.plist */,
+				149D699425F0C4EB0034D30C /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		149D698825F0C4EB0034D30C /* Euclidean Sequencer (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 149D699D25F0C4EB0034D30C /* Build configuration list for PBXNativeTarget "Euclidean Sequencer (iOS)" */;
+			buildPhases = (
+				149D698525F0C4EB0034D30C /* Sources */,
+				149D698625F0C4EB0034D30C /* Frameworks */,
+				149D698725F0C4EB0034D30C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Euclidean Sequencer (iOS)";
+			productName = "Euclidean Sequencer (iOS)";
+			productReference = 149D698925F0C4EB0034D30C /* Euclidean Sequencer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		149D699025F0C4EB0034D30C /* Euclidean Sequencer (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 149D69A025F0C4EB0034D30C /* Build configuration list for PBXNativeTarget "Euclidean Sequencer (macOS)" */;
+			buildPhases = (
+				149D698D25F0C4EB0034D30C /* Sources */,
+				149D698E25F0C4EB0034D30C /* Frameworks */,
+				149D698F25F0C4EB0034D30C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Euclidean Sequencer (macOS)";
+			productName = "Euclidean Sequencer (macOS)";
+			productReference = 149D699125F0C4EB0034D30C /* Euclidean Sequencer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		149D697D25F0C4EA0034D30C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					149D698825F0C4EB0034D30C = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					149D699025F0C4EB0034D30C = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 149D698025F0C4EA0034D30C /* Build configuration list for PBXProject "Euclidean Sequencer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 149D697C25F0C4EA0034D30C;
+			productRefGroup = 149D698A25F0C4EB0034D30C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				149D698825F0C4EB0034D30C /* Euclidean Sequencer (iOS) */,
+				149D699025F0C4EB0034D30C /* Euclidean Sequencer (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		149D698725F0C4EB0034D30C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				149D699925F0C4EB0034D30C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		149D698F25F0C4EB0034D30C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				149D699A25F0C4EB0034D30C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		149D698525F0C4EB0034D30C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				149D699725F0C4EB0034D30C /* ContentView.swift in Sources */,
+				149D699525F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		149D698D25F0C4EB0034D30C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				149D699825F0C4EB0034D30C /* ContentView.swift in Sources */,
+				149D699625F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		149D699B25F0C4EB0034D30C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		149D699C25F0C4EB0034D30C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		149D699E25F0C4EB0034D30C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP4YA6Q6DH;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joakimhellgren.Euclidean-Sequencer";
+				PRODUCT_NAME = "Euclidean Sequencer";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		149D699F25F0C4EB0034D30C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP4YA6Q6DH;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joakimhellgren.Euclidean-Sequencer";
+				PRODUCT_NAME = "Euclidean Sequencer";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		149D69A125F0C4EB0034D30C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TP4YA6Q6DH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joakimhellgren.Euclidean-Sequencer";
+				PRODUCT_NAME = "Euclidean Sequencer";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		149D69A225F0C4EB0034D30C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TP4YA6Q6DH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joakimhellgren.Euclidean-Sequencer";
+				PRODUCT_NAME = "Euclidean Sequencer";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		149D698025F0C4EA0034D30C /* Build configuration list for PBXProject "Euclidean Sequencer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				149D699B25F0C4EB0034D30C /* Debug */,
+				149D699C25F0C4EB0034D30C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		149D699D25F0C4EB0034D30C /* Build configuration list for PBXNativeTarget "Euclidean Sequencer (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				149D699E25F0C4EB0034D30C /* Debug */,
+				149D699F25F0C4EB0034D30C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		149D69A025F0C4EB0034D30C /* Build configuration list for PBXNativeTarget "Euclidean Sequencer (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				149D69A125F0C4EB0034D30C /* Debug */,
+				149D69A225F0C4EB0034D30C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 149D697D25F0C4EA0034D30C /* Project object */;
+}

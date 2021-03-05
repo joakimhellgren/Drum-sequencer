@@ -16,18 +16,20 @@ struct MuteButtonView: View {
     var body: some View {
         VStack {
             ForEach(0 ..< conductor.data.trackCount, id: \.self) { trackIndex in
-                Image(systemName: isMuted[trackIndex] ? "speaker.slash.fill" : "speaker.slash").resizable()
-                    .frame(width: 32, height: 32)
-                    .onTapGesture(perform: {
-                        isMuted[trackIndex].toggle()
-                        if isMuted[trackIndex] {
-                            sequences[trackIndex].append(conductor.sequencer.tracks[trackIndex].sequence)
-                            conductor.sequencer.tracks[trackIndex].clear()
-                        } else {
-                            conductor.sequencer.tracks[trackIndex].sequence = sequences[trackIndex][0]
-                            sequences[trackIndex].removeAll()
-                        }
-                    })
+                Group {
+                    Image(systemName: isMuted[trackIndex] ? "speaker.slash.fill" : "speaker.slash").resizable()
+                        .frame(width: 20, height: 20)
+                        .onTapGesture(perform: {
+                            isMuted[trackIndex].toggle()
+                            if isMuted[trackIndex] {
+                                sequences[trackIndex].append(conductor.sequencer.tracks[trackIndex].sequence)
+                                conductor.sequencer.tracks[trackIndex].clear()
+                            } else {
+                                conductor.sequencer.tracks[trackIndex].sequence = sequences[trackIndex][0]
+                                sequences[trackIndex].removeAll()
+                            }
+                        })
+                }.frame(width: 32, height: 32)
             }
         }
         

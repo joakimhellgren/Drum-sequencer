@@ -25,18 +25,18 @@ struct ContentView: View {
                             }
                         Text("kit 2")
                             .onTapGesture {
-                                self.kit = 0
+                                self.kit = 1
                                 self.kitSelectionActive.toggle()
                             }
                         Text("kit 3")
                             .onTapGesture {
-                                self.kit = 0
+                                self.kit = 2
                                 self.kitSelectionActive.toggle()
                             }
                     }
                 }
             } else {
-                MainView(kitSelectionActive: $kitSelectionActive, kit: 0)
+                MainView(kitSelectionActive: $kitSelectionActive, kit: kit)
             }
         }
         .animation(.easeInOut)

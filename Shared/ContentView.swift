@@ -39,7 +39,8 @@ struct ContentView: View {
                 MainView(kitSelectionActive: $kitSelectionActive, kit: kit)
             }
         }
-        .animation(.easeInOut)
+        .padding()
+        .animation(.easeInOut(duration: 0.1))
         
     }
 }

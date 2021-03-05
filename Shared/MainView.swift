@@ -23,7 +23,9 @@ struct MainView: View {
             HStack {
                 PlayButtonView(conductor: conductor)
                 Spacer()
-                Text("Change kit")
+                Image(systemName: "waveform.path.ecg.rectangle")
+                    .resizable()
+                    .frame(width: 38, height: 32)
                     .onTapGesture {
                         self.kitSelectionActive.toggle()
                     }
@@ -33,25 +35,22 @@ struct MainView: View {
             
             Spacer()
             
+            
             HStack {
-                ZStack {
-                    Rectangle().foregroundColor(Color(UIColor.secondarySystemBackground))
-                    Text("\(Int(conductor.data.tempo)) BPM").foregroundColor(.primary)
-                }.frame(width: 100, height: 32)
+                Text("\(Int(conductor.data.tempo / 4)) BPM").foregroundColor(.primary)
                 Spacer()
             }
-            
             HStack {
               
                 Group {
                     Button("-") {
                         if conductor.data.tempo > 50 {
-                            conductor.data.tempo -= 5
+                            conductor.data.tempo -= 4
                         }
                     }
                     Button("+") {
                         if conductor.data.tempo < 560 {
-                            conductor.data.tempo += 5
+                            conductor.data.tempo += 4
                         }
                     }
                 }.frame(width: 32, height: 32)
@@ -65,6 +64,7 @@ struct MainView: View {
                 MuteButtonView(conductor: conductor)
             }
            
+            Spacer()
             PadsView(conductor: conductor, isRecording: isRecording) { pad in
                     conductor.playPad(padNumber: pad)
             }.frame(height: 128)

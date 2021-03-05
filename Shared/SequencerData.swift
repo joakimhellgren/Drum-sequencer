@@ -10,7 +10,7 @@ import AudioKit
 
 struct SequencerData {
     var isPlaying = false
-    var tempo: BPM = 320
+    var tempo: BPM = 480
     var metronomeSignature: Int = 16
     var trackSignature: [Int] = [16, 16, 16, 16, 16, 16, 16, 16]
     var notes: [Int] = [24, 26, 27, 29, 30, 34, 35, 38]

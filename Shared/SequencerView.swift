@@ -13,19 +13,25 @@ struct SequencerView: View {
         VStack {
             ForEach(0 ..< conductor.data.trackCount, id: \.self) { trackIndex in
                 HStack {
-                    Stepper("", onIncrement: {
-                        if conductor.data.trackSignature[trackIndex] < 16 {
-                            let trackLength = Double(conductor.data.trackSignature[trackIndex])
-                            conductor.data.trackSignature[trackIndex] += 1
-                            conductor.sequencer.tracks[trackIndex].length = trackLength
-                        }
-                    }, onDecrement: {
-                        if conductor.data.trackSignature[trackIndex] > 1 {
-                            let trackLength = Double(conductor.data.trackSignature[trackIndex])
-                            conductor.data.trackSignature[trackIndex] -= 1
-                            conductor.sequencer.tracks[trackIndex].length = trackLength
-                        }
-                    }).frame(width: 100)
+                    Group {
+                        Button("-") {
+                            if conductor.data.trackSignature[trackIndex] > 1 {
+                                conductor.data.trackSignature[trackIndex] -= 1
+                                let trackLength = Double(conductor.data.trackSignature[trackIndex])
+                                
+                                conductor.sequencer.tracks[trackIndex].length = trackLength
+                            }
+                        }.frame(width: 32, height: 32)
+                        Button("+") {
+                            if conductor.data.trackSignature[trackIndex] < 16 {
+                                
+                                conductor.data.trackSignature[trackIndex] += 1
+                                let trackLength = Double(conductor.data.trackSignature[trackIndex])
+                                conductor.sequencer.tracks[trackIndex].length = trackLength
+                            }
+                        }.frame(width: 32, height: 32)
+                    }
+                    
 
                 
                     

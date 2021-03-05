@@ -35,7 +35,7 @@ struct MetronomeView: View {
             Group {
                 Image(systemName: "timer").resizable().frame(width: 18, height: 18)
             }.frame(width: 32, height: 32)
-        }.frame(maxHeight: 32)
+        }.frame(height: 32)
     }
 }
 

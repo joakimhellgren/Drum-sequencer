@@ -19,14 +19,14 @@ struct MainView: View {
 
             
         VStack {
-            Text("congratus u managed to click something and get redirected here.")
-                .onTapGesture {
-                    self.kitSelectionActive.toggle()
-                }
+           
             HStack {
                 PlayButtonView(conductor: conductor)
                 Spacer()
                 Text("Change kit")
+                    .onTapGesture {
+                        self.kitSelectionActive.toggle()
+                    }
                 Spacer()
                 RecordButtonView(isRecording: $isRecording)
             }.frame(height: 32).padding(8)
@@ -42,18 +42,20 @@ struct MainView: View {
             }
             
             HStack {
-                VStack {
-                    Stepper("", onIncrement: {
-                        if conductor.data.tempo < 560 {
-                            conductor.data.tempo += 5
-                        }
-                    }, onDecrement: {
+              
+                Group {
+                    Button("-") {
                         if conductor.data.tempo > 50 {
                             conductor.data.tempo -= 5
                         }
-                    })
-                    .frame(width: 100)
-                }
+                    }
+                    Button("+") {
+                        if conductor.data.tempo < 560 {
+                            conductor.data.tempo += 5
+                        }
+                    }
+                }.frame(width: 32, height: 32)
+                
                 MetronomeView(conductor: conductor)
             }
             
@@ -62,7 +64,7 @@ struct MainView: View {
                 SequencerView(conductor: conductor)
                 MuteButtonView(conductor: conductor)
             }
-            Spacer()
+           
             PadsView(conductor: conductor, isRecording: isRecording) { pad in
                     conductor.playPad(padNumber: pad)
             }.frame(height: 128)

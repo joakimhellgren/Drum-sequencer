@@ -11,6 +11,17 @@
 		1463374725F20EF3004E85DE /* RecordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463374525F20EF3004E85DE /* RecordButtonView.swift */; };
 		1463374B25F21330004E85DE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463374A25F21330004E85DE /* TestView.swift */; };
 		1463374C25F21330004E85DE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463374A25F21330004E85DE /* TestView.swift */; };
+		146E580A25F38A15002EE912 /* KorgLowPassFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E580925F38A15002EE912 /* KorgLowPassFilterData.swift */; };
+		146E580B25F38A15002EE912 /* KorgLowPassFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E580925F38A15002EE912 /* KorgLowPassFilterData.swift */; };
+		146E580F25F38C9F002EE912 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E580E25F38C9F002EE912 /* ParameterSlider.swift */; };
+		146E581025F38C9F002EE912 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E580E25F38C9F002EE912 /* ParameterSlider.swift */; };
+		146E581525F38CF8002EE912 /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = 146E581425F38CF8002EE912 /* Sliders */; };
+		146E582025F38E2D002EE912 /* KorgLowPassFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */; };
+		146E582125F38E2D002EE912 /* KorgLowPassFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */; };
+		146E582525F3EB82002EE912 /* VariableDelayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E582425F3EB81002EE912 /* VariableDelayData.swift */; };
+		146E582625F3EB82002EE912 /* VariableDelayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E582425F3EB81002EE912 /* VariableDelayData.swift */; };
+		146E582A25F3ECB9002EE912 /* VariableDelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E582925F3ECB9002EE912 /* VariableDelayView.swift */; };
+		146E582B25F3ECB9002EE912 /* VariableDelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E582925F3ECB9002EE912 /* VariableDelayView.swift */; };
 		149D699525F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */; };
 		149D699625F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */; };
 		149D699725F0C4EB0034D30C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D698325F0C4EA0034D30C /* ContentView.swift */; };
@@ -38,13 +49,16 @@
 		149D69F225F1028C0034D30C /* PadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D69F025F1028C0034D30C /* PadsView.swift */; };
 		14ED653425F19EBA00F24102 /* MuteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED653325F19EBA00F24102 /* MuteButtonView.swift */; };
 		14ED653525F19EBA00F24102 /* MuteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED653325F19EBA00F24102 /* MuteButtonView.swift */; };
-		14F7C5F425F14A07008C62F3 /* SampleKits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7C5F325F14A07008C62F3 /* SampleKits.swift */; };
-		14F7C5F525F14A07008C62F3 /* SampleKits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7C5F325F14A07008C62F3 /* SampleKits.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1463374525F20EF3004E85DE /* RecordButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButtonView.swift; sourceTree = "<group>"; };
 		1463374A25F21330004E85DE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		146E580925F38A15002EE912 /* KorgLowPassFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KorgLowPassFilterData.swift; sourceTree = "<group>"; };
+		146E580E25F38C9F002EE912 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
+		146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KorgLowPassFilterView.swift; sourceTree = "<group>"; };
+		146E582425F3EB81002EE912 /* VariableDelayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableDelayData.swift; sourceTree = "<group>"; };
+		146E582925F3ECB9002EE912 /* VariableDelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableDelayView.swift; sourceTree = "<group>"; };
 		149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euclidean_SequencerApp.swift; sourceTree = "<group>"; };
 		149D698325F0C4EA0034D30C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		149D698425F0C4EB0034D30C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +77,6 @@
 		149D69E925F0F88B0034D30C /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Samples; sourceTree = "<group>"; };
 		149D69F025F1028C0034D30C /* PadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadsView.swift; sourceTree = "<group>"; };
 		14ED653325F19EBA00F24102 /* MuteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteButtonView.swift; sourceTree = "<group>"; };
-		14F7C5F325F14A07008C62F3 /* SampleKits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleKits.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				149D69A725F0C6120034D30C /* AudioKit in Frameworks */,
+				146E581525F38CF8002EE912 /* Sliders in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +99,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1466B88225F37BFD00C9CBBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				149D698325F0C4EA0034D30C /* ContentView.swift */,
+				149D69E425F0F23B0034D30C /* MainView.swift */,
+				149D69C725F0EECD0034D30C /* MetronomeView.swift */,
+				149D69DF25F0F2220034D30C /* SequencerView.swift */,
+				149D69F025F1028C0034D30C /* PadsView.swift */,
+				14ED653325F19EBA00F24102 /* MuteButtonView.swift */,
+				149D69CC25F0EF5E0034D30C /* PlayButtonView.swift */,
+				1463374525F20EF3004E85DE /* RecordButtonView.swift */,
+				146E582925F3ECB9002EE912 /* VariableDelayView.swift */,
+				146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */,
+				1463374A25F21330004E85DE /* TestView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1466B88725F37C0B00C9CBBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				146E582425F3EB81002EE912 /* VariableDelayData.swift */,
+				149D69C225F0E6040034D30C /* Sample.swift */,
+				149D69AF25F0C73D0034D30C /* SequencerData.swift */,
+				146E580925F38A15002EE912 /* KorgLowPassFilterData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1466B88A25F37C2100C9CBBC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				149D69B425F0C8160034D30C /* SequencerConductor.swift */,
+				146E580E25F38C9F002EE912 /* ParameterSlider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		149D697C25F0C4EA0034D30C = {
 			isa = PBXGroup;
 			children = (
@@ -100,19 +152,9 @@
 			children = (
 				149D69E925F0F88B0034D30C /* Samples */,
 				149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */,
-				149D69AF25F0C73D0034D30C /* SequencerData.swift */,
-				149D69B425F0C8160034D30C /* SequencerConductor.swift */,
-				149D698325F0C4EA0034D30C /* ContentView.swift */,
-				149D69F025F1028C0034D30C /* PadsView.swift */,
-				149D69E425F0F23B0034D30C /* MainView.swift */,
-				1463374A25F21330004E85DE /* TestView.swift */,
-				1463374525F20EF3004E85DE /* RecordButtonView.swift */,
-				14ED653325F19EBA00F24102 /* MuteButtonView.swift */,
-				14F7C5F325F14A07008C62F3 /* SampleKits.swift */,
-				149D69DF25F0F2220034D30C /* SequencerView.swift */,
-				149D69C725F0EECD0034D30C /* MetronomeView.swift */,
-				149D69CC25F0EF5E0034D30C /* PlayButtonView.swift */,
-				149D69C225F0E6040034D30C /* Sample.swift */,
+				1466B88725F37C0B00C9CBBC /* Model */,
+				1466B88A25F37C2100C9CBBC /* ViewModel */,
+				1466B88225F37BFD00C9CBBC /* View */,
 				149D698425F0C4EB0034D30C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -162,6 +204,7 @@
 			name = "Euclidean Sequencer (iOS)";
 			packageProductDependencies = (
 				149D69A625F0C6120034D30C /* AudioKit */,
+				146E581425F38CF8002EE912 /* Sliders */,
 			);
 			productName = "Euclidean Sequencer (iOS)";
 			productReference = 149D698925F0C4EB0034D30C /* Euclidean Sequencer.app */;
@@ -212,6 +255,7 @@
 			mainGroup = 149D697C25F0C4EA0034D30C;
 			packageReferences = (
 				149D69A525F0C6120034D30C /* XCRemoteSwiftPackageReference "AudioKit" */,
+				146E581325F38CF8002EE912 /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
 			);
 			productRefGroup = 149D698A25F0C4EB0034D30C /* Products */;
 			projectDirPath = "";
@@ -253,16 +297,20 @@
 				149D69C325F0E6040034D30C /* Sample.swift in Sources */,
 				14ED653425F19EBA00F24102 /* MuteButtonView.swift in Sources */,
 				149D69E525F0F23B0034D30C /* MainView.swift in Sources */,
+				146E580F25F38C9F002EE912 /* ParameterSlider.swift in Sources */,
 				149D69F125F1028C0034D30C /* PadsView.swift in Sources */,
 				149D699725F0C4EB0034D30C /* ContentView.swift in Sources */,
 				149D699525F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */,
+				146E582025F38E2D002EE912 /* KorgLowPassFilterView.swift in Sources */,
 				149D69C825F0EECD0034D30C /* MetronomeView.swift in Sources */,
 				149D69E025F0F2220034D30C /* SequencerView.swift in Sources */,
+				146E580A25F38A15002EE912 /* KorgLowPassFilterData.swift in Sources */,
 				149D69B525F0C8160034D30C /* SequencerConductor.swift in Sources */,
 				149D69CD25F0EF5E0034D30C /* PlayButtonView.swift in Sources */,
 				1463374625F20EF3004E85DE /* RecordButtonView.swift in Sources */,
-				14F7C5F425F14A07008C62F3 /* SampleKits.swift in Sources */,
+				146E582A25F3ECB9002EE912 /* VariableDelayView.swift in Sources */,
 				149D69B025F0C73D0034D30C /* SequencerData.swift in Sources */,
+				146E582525F3EB82002EE912 /* VariableDelayData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,16 +322,20 @@
 				149D69C425F0E6040034D30C /* Sample.swift in Sources */,
 				14ED653525F19EBA00F24102 /* MuteButtonView.swift in Sources */,
 				149D69E625F0F23B0034D30C /* MainView.swift in Sources */,
+				146E581025F38C9F002EE912 /* ParameterSlider.swift in Sources */,
 				149D69F225F1028C0034D30C /* PadsView.swift in Sources */,
 				149D699825F0C4EB0034D30C /* ContentView.swift in Sources */,
 				149D699625F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */,
+				146E582125F38E2D002EE912 /* KorgLowPassFilterView.swift in Sources */,
 				149D69C925F0EECD0034D30C /* MetronomeView.swift in Sources */,
 				149D69E125F0F2220034D30C /* SequencerView.swift in Sources */,
+				146E580B25F38A15002EE912 /* KorgLowPassFilterData.swift in Sources */,
 				149D69B625F0C8160034D30C /* SequencerConductor.swift in Sources */,
 				149D69CE25F0EF5E0034D30C /* PlayButtonView.swift in Sources */,
 				1463374725F20EF3004E85DE /* RecordButtonView.swift in Sources */,
-				14F7C5F525F14A07008C62F3 /* SampleKits.swift in Sources */,
+				146E582B25F3ECB9002EE912 /* VariableDelayView.swift in Sources */,
 				149D69B125F0C73D0034D30C /* SequencerData.swift in Sources */,
+				146E582625F3EB82002EE912 /* VariableDelayData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +579,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		146E581325F38CF8002EE912 /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-sliders.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		149D69A525F0C6120034D30C /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
@@ -538,6 +598,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		146E581425F38CF8002EE912 /* Sliders */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146E581325F38CF8002EE912 /* XCRemoteSwiftPackageReference "swiftui-sliders" */;
+			productName = Sliders;
+		};
 		149D69A625F0C6120034D30C /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 149D69A525F0C6120034D30C /* XCRemoteSwiftPackageReference "AudioKit" */;

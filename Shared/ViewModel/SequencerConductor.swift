@@ -16,7 +16,8 @@ class SequencerConductor: ObservableObject {
     let mixer = Mixer()
     var sequencer = Sequencer()
     
-    //let reverb: Reverb
+    let reverb: CostelloReverb
+    let dryWetReverb: DryWetMixer
     
     let delay: VariableDelay
     let dryWetDelay: DryWetMixer
@@ -24,7 +25,29 @@ class SequencerConductor: ObservableObject {
     let filter: KorgLowPassFilter
     let dryWetFilter: DryWetMixer
     
+    let clipper: Clipper
+    let amplifier: Fader
+    let dryWetClipper: DryWetMixer
+    
     var samples: [Sample] = []
+    
+    @Published var clipperData = ClipperData() {
+        didSet {
+            clipper.$limit.ramp(to: clipperData.limit, duration: clipperData.rampDuration)
+            if clipperData.limit > 0.25 {
+                amplifier.gain = 1.0 / clipperData.limit
+            }
+            dryWetClipper.balance = clipperData.balance
+        }
+    }
+    
+    @Published var reverbData = CostelloReverbData() {
+        didSet {
+            reverb.$feedback.ramp(to: reverbData.feedback, duration: reverbData.rampDuration)
+            reverb.$cutoffFrequency.ramp(to: reverbData.cutoffFrequency, duration: reverbData.rampDuration)
+            dryWetReverb.balance = reverbData.balance
+        }
+    }
     
     @Published var filterData = KorgLowPassFilterData() {
         didSet {
@@ -99,16 +122,18 @@ class SequencerConductor: ObservableObject {
     
     init() {
         
+        clipper = Clipper(sampler)
+        amplifier = Fader(clipper)
+        dryWetClipper = DryWetMixer(sampler, amplifier)
         
-        
-        filter = KorgLowPassFilter(sampler)
-        dryWetFilter = DryWetMixer(sampler, filter)
+        filter = KorgLowPassFilter(dryWetClipper)
+        dryWetFilter = DryWetMixer(dryWetClipper, filter)
         
         delay = VariableDelay(dryWetFilter)
         dryWetDelay = DryWetMixer(dryWetFilter, delay)
         
-        //reverb = Reverb(dryWetDelay)
-        //reverb.dryWetMix = 0.12
+        reverb = CostelloReverb(dryWetDelay)
+        dryWetReverb = DryWetMixer(dryWetDelay, reverb)
         
         for _ in 0 ..< data.trackCount {
             let _ = sequencer.addTrack(for: sampler)
@@ -117,12 +142,12 @@ class SequencerConductor: ObservableObject {
         setupMetronome()
         updateSequence(note: 24, position: 0, track: 0)
         
-        mixer.addInput(dryWetDelay)
+        mixer.addInput(dryWetReverb)
         
         mixer.addInput(callbackInst)
         engine.output = mixer
         
-        // add notes to every step on all tracks
+        // add note info to every step on all tracks
         
         print(data.noteStatus)
         for _ in 1 ..< data.metronomeSignature {

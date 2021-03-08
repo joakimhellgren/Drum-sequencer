@@ -47,6 +47,10 @@
 		149D69EB25F0F88B0034D30C /* Samples in Resources */ = {isa = PBXBuildFile; fileRef = 149D69E925F0F88B0034D30C /* Samples */; };
 		149D69F125F1028C0034D30C /* PadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D69F025F1028C0034D30C /* PadsView.swift */; };
 		149D69F225F1028C0034D30C /* PadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D69F025F1028C0034D30C /* PadsView.swift */; };
+		14B17EB525F6A2E90095CAAA /* CostelloReverbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B17EB425F6A2E90095CAAA /* CostelloReverbView.swift */; };
+		14B17EB625F6A2E90095CAAA /* CostelloReverbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B17EB425F6A2E90095CAAA /* CostelloReverbView.swift */; };
+		14B17EBA25F6AA0D0095CAAA /* ClipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B17EB925F6AA0D0095CAAA /* ClipperView.swift */; };
+		14B17EBB25F6AA0D0095CAAA /* ClipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B17EB925F6AA0D0095CAAA /* ClipperView.swift */; };
 		14ED653425F19EBA00F24102 /* MuteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED653325F19EBA00F24102 /* MuteButtonView.swift */; };
 		14ED653525F19EBA00F24102 /* MuteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED653325F19EBA00F24102 /* MuteButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +80,8 @@
 		149D69E425F0F23B0034D30C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		149D69E925F0F88B0034D30C /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Samples; sourceTree = "<group>"; };
 		149D69F025F1028C0034D30C /* PadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadsView.swift; sourceTree = "<group>"; };
+		14B17EB425F6A2E90095CAAA /* CostelloReverbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostelloReverbView.swift; sourceTree = "<group>"; };
+		14B17EB925F6AA0D0095CAAA /* ClipperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipperView.swift; sourceTree = "<group>"; };
 		14ED653325F19EBA00F24102 /* MuteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,14 +110,9 @@
 			children = (
 				149D698325F0C4EA0034D30C /* ContentView.swift */,
 				149D69E425F0F23B0034D30C /* MainView.swift */,
-				149D69C725F0EECD0034D30C /* MetronomeView.swift */,
-				149D69DF25F0F2220034D30C /* SequencerView.swift */,
-				149D69F025F1028C0034D30C /* PadsView.swift */,
-				14ED653325F19EBA00F24102 /* MuteButtonView.swift */,
-				149D69CC25F0EF5E0034D30C /* PlayButtonView.swift */,
-				1463374525F20EF3004E85DE /* RecordButtonView.swift */,
-				146E582925F3ECB9002EE912 /* VariableDelayView.swift */,
-				146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */,
+				14B17EC425F6B16D0095CAAA /* Components */,
+				14B17EC125F6B1590095CAAA /* Buttons */,
+				14B17EBE25F6B1430095CAAA /* Effects */,
 				1463374A25F21330004E85DE /* TestView.swift */,
 			);
 			path = View;
@@ -184,6 +185,37 @@
 				149D699425F0C4EB0034D30C /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		14B17EBE25F6B1430095CAAA /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */,
+				146E582925F3ECB9002EE912 /* VariableDelayView.swift */,
+				14B17EB925F6AA0D0095CAAA /* ClipperView.swift */,
+				14B17EB425F6A2E90095CAAA /* CostelloReverbView.swift */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		14B17EC125F6B1590095CAAA /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				14ED653325F19EBA00F24102 /* MuteButtonView.swift */,
+				149D69CC25F0EF5E0034D30C /* PlayButtonView.swift */,
+				1463374525F20EF3004E85DE /* RecordButtonView.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		14B17EC425F6B16D0095CAAA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				149D69C725F0EECD0034D30C /* MetronomeView.swift */,
+				149D69DF25F0F2220034D30C /* SequencerView.swift */,
+				149D69F025F1028C0034D30C /* PadsView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +327,11 @@
 			files = (
 				1463374B25F21330004E85DE /* TestView.swift in Sources */,
 				149D69C325F0E6040034D30C /* Sample.swift in Sources */,
+				14B17EB525F6A2E90095CAAA /* CostelloReverbView.swift in Sources */,
 				14ED653425F19EBA00F24102 /* MuteButtonView.swift in Sources */,
 				149D69E525F0F23B0034D30C /* MainView.swift in Sources */,
 				146E580F25F38C9F002EE912 /* ParameterSlider.swift in Sources */,
+				14B17EBA25F6AA0D0095CAAA /* ClipperView.swift in Sources */,
 				149D69F125F1028C0034D30C /* PadsView.swift in Sources */,
 				149D699725F0C4EB0034D30C /* ContentView.swift in Sources */,
 				149D699525F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */,
@@ -320,9 +354,11 @@
 			files = (
 				1463374C25F21330004E85DE /* TestView.swift in Sources */,
 				149D69C425F0E6040034D30C /* Sample.swift in Sources */,
+				14B17EB625F6A2E90095CAAA /* CostelloReverbView.swift in Sources */,
 				14ED653525F19EBA00F24102 /* MuteButtonView.swift in Sources */,
 				149D69E625F0F23B0034D30C /* MainView.swift in Sources */,
 				146E581025F38C9F002EE912 /* ParameterSlider.swift in Sources */,
+				14B17EBB25F6AA0D0095CAAA /* ClipperView.swift in Sources */,
 				149D69F225F1028C0034D30C /* PadsView.swift in Sources */,
 				149D699825F0C4EB0034D30C /* ContentView.swift in Sources */,
 				149D699625F0C4EB0034D30C /* Euclidean_SequencerApp.swift in Sources */,

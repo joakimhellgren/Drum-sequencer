@@ -29,12 +29,12 @@ struct MainView: View {
                         if conductor.data.tempo > 50 {
                             conductor.data.tempo -= 4
                         }
-                    }
+                    }.accentColor(.red)
                     Button("+") {
                         if conductor.data.tempo < 560 {
                             conductor.data.tempo += 4
                         }
-                    }
+                    }.accentColor(.red)
                 }.frame(width: 32, height: 32)
                 
                 MetronomeView(conductor: conductor)
@@ -55,7 +55,7 @@ struct MainView: View {
             
             HStack {
                 VStack {
-                    //Text("\(Int(conductor.data.tempo / 4)) BPM").foregroundColor(.primary)
+                    
                     Image(systemName: "waveform.path.ecg.rectangle")
                         .resizable()
                         .foregroundColor(Color(UIColor.darkGray))
@@ -65,13 +65,10 @@ struct MainView: View {
                         }.padding(.vertical)
                     Spacer()
                     PlayButtonView(conductor: conductor).padding(.vertical)
-
                     RecordButtonView(isRecording: $isRecording).padding(.vertical)
                 }.frame(width: 68)
                 
-                
                 VStack {
-                    
                     PadsView(conductor: conductor, isRecording: isRecording) { pad in
                         conductor.playPad(padNumber: pad)
                     }
@@ -82,7 +79,10 @@ struct MainView: View {
                         KorgLowPassFilterView(conductor: conductor).frame(width: viewWidth / 6)
                         VariableDelayView(conductor: conductor).frame(width: viewWidth / 6)
                     }
-                    
+                    VStack {
+                        CostelloReverbView(conductor: conductor).frame(width: viewWidth / 6)
+                        ClipperView(conductor: conductor).frame(width: viewWidth / 6)
+                    }
                 }
                 
             }

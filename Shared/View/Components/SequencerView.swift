@@ -29,7 +29,8 @@ struct SequencerView: View {
                                 
                                 conductor.sequencer.tracks[trackIndex].length = trackLength
                             }
-                        }
+                        }.accentColor(.primary)
+                        
                         Button("+") {
                             if conductor.data.trackSignature[trackIndex] < 16 {
                                 
@@ -37,7 +38,7 @@ struct SequencerView: View {
                                 let trackLength = Double(conductor.data.trackSignature[trackIndex])
                                 conductor.sequencer.tracks[trackIndex].length = trackLength
                             }
-                        }
+                        }.accentColor(.primary)
                     }.frame(minWidth: 32, minHeight: 28)
                     
 
@@ -52,7 +53,7 @@ struct SequencerView: View {
                                                 ? Color(UIColor.darkGray)
                                                 : .clear,
                                             width: Int(round(conductor.sequencer.tracks[trackIndex].currentPosition)) == index ? 2 : 1 )
-                                    .onTapGesture {
+                                .gesture(TapGesture().onEnded {
                                         if conductor.data.noteStatus[trackIndex][index] {
                                             conductor.sequencer.tracks[trackIndex].sequence.removeNote(at: Double(index))
                                             conductor.data.noteStatus[trackIndex][index] = false
@@ -60,7 +61,7 @@ struct SequencerView: View {
                                             conductor.updateSequence(note: conductor.data.notes[trackIndex], position: Double(index), track: trackIndex)
                                             conductor.data.noteStatus[trackIndex][index] = true
                                         }
-                                    }
+                                    })
                             
                         }
                     }.frame(minWidth: 400, minHeight: 28)
@@ -74,7 +75,7 @@ struct SequencerView: View {
                             conductor.sequencer.tracks[trackIndex].sequence = sequences[trackIndex][0]
                             sequences[trackIndex].removeAll()
                         }
-                    }.frame(minWidth: 32, minHeight: 32).foregroundColor(colorSetter(status: isMuted, pos: trackIndex))
+                    }.frame(width: 48, height: 32).foregroundColor(colorSetter(status: isMuted, pos: trackIndex))
                   
                     
             

@@ -12,5 +12,5 @@ struct KorgLowPassFilterData {
     var resonance: AUValue = 0.15
     var saturation: AUValue = 0.0
     var rampDuration: AUValue = 0.02
-    var balance: AUValue = 0.5
+    var balance: AUValue = 0.0
 }

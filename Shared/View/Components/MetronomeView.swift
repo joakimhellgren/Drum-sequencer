@@ -28,13 +28,13 @@ struct MetronomeView: View {
             ForEach(0 ..< conductor.data.metronomeSignature, id: \.self) { index in
                 ZStack {
                     Circle().foregroundColor(conductor.data.currentBeat[0] == index ? darkGray : .clear)
-                    Text("\(index + 1)").foregroundColor(conductor.data.currentBeat[0] == index ? .clear : darkGray)
+                    Text("\(index + 1)").foregroundColor(conductor.data.currentBeat[0] == index ? .primary : darkGray)
                         .font(.footnote)
                 }
             }
             Group {
-                Image(systemName: "timer").resizable().frame(width: 18, height: 18)
-            }.frame(width: 32, height: 32)
+                Text("\(Int(conductor.data.tempo / 4))").foregroundColor(.primary)
+            }.frame(width: 48, height: 32)
         }.frame(height: 32)
     }
 }

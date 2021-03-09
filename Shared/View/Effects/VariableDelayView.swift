@@ -15,7 +15,7 @@ struct VariableDelayView: View {
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
-                    Text("dly:")
+                    Text("Delay")
                     Spacer()
                     Image(systemName: self.conductor.delayData.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
@@ -31,7 +31,7 @@ struct VariableDelayView: View {
                 
                 VStack {
                     HStack {
-                        Text("tm")
+                        Image(systemName: "clock")
                         Spacer()
                         Slider(value: self.$conductor.delayData.time, in: 0.0 ... 0.5, label: {
                             Text("Time")
@@ -39,7 +39,7 @@ struct VariableDelayView: View {
                         .accentColor(.red)
                     }
                     HStack {
-                        Text("fdbck")
+                        Image(systemName: "infinity.circle")
                         Spacer()
                         Slider(value: self.$conductor.delayData.feedback, in: 0 ... 1, label: {
                             Text("Feedback")
@@ -47,7 +47,7 @@ struct VariableDelayView: View {
                         .accentColor(.red)
                     }
                     HStack {
-                        Text("blnc")
+                        Image(systemName: "dial.min")
                         Spacer()
                         Slider(value: self.$conductor.delayData.balance, in: 0 ... 1, label: {
                             Text("Balance")

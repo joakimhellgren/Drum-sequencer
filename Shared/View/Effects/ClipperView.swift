@@ -14,7 +14,7 @@ struct ClipperView: View {
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
-                    Text("clppr:")
+                    Text("Clipper")
                     Spacer()
                     Image(systemName: self.conductor.clipperData.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
@@ -25,11 +25,12 @@ struct ClipperView: View {
                             }
                         })
                 }
+                
                 Spacer()
                 
                 VStack {
                     HStack {
-                        Text("lmtr")
+                        Image(systemName: "highlighter")
                         Spacer()
                         Slider(value: self.$conductor.clipperData.limit, in: 0.0 ... 1.0, label: {
                             Text("limit").frame(width: 120)
@@ -38,7 +39,7 @@ struct ClipperView: View {
                         .accentColor(.green)
                     }
                     HStack {
-                        Text("blnc")
+                        Image(systemName: "dial.min")
                         Spacer()
                         Slider(value: self.$conductor.clipperData.balance, in: 0.1 ... 1.0, label: {
                             Text("balance").frame(width: 120)

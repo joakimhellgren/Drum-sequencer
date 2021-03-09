@@ -16,6 +16,7 @@ class SequencerConductor: ObservableObject {
     let mixer = Mixer()
     var sequencer = Sequencer()
     
+    
     let reverb: CostelloReverb
     let dryWetReverb: DryWetMixer
     
@@ -24,6 +25,7 @@ class SequencerConductor: ObservableObject {
     
     let filter: KorgLowPassFilter
     let dryWetFilter: DryWetMixer
+    
     
     let clipper: Clipper
     let amplifier: Fader
@@ -94,7 +96,25 @@ class SequencerConductor: ObservableObject {
     
     func updateSequence(note: Int, position: Double, track: Int) {
         var selectedTrack = sequencer.tracks[track]
-        selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: round(position), duration: 0.95)
+    
+        let notes = data.noteStatus[track]
+        if notes[(Int(position) + 1) % notes.count] {
+            selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: round(position), duration: 0.95)
+            if notes[Int(position) % notes.count] {
+                if position == 0 {
+                    selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: Double(selectedTrack.sequence.notes.count), duration: 0.95)
+                }
+                if Int(round(position)) == notes.count {
+                    selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: 0.0, duration: 0.95)
+                }
+            }
+        } else {
+            selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: round(position), duration: 1.95)
+        }
+    
+
+        
+        
         
         selectedTrack = sequencer.tracks[data.trackCount]
         selectedTrack.length = Double(data.metronomeSignature)
@@ -121,6 +141,11 @@ class SequencerConductor: ObservableObject {
     }
     
     init() {
+       
+        Settings.bufferLength = .shortest
+       
+        
+        
         
         clipper = Clipper(sampler)
         amplifier = Fader(clipper)
@@ -146,7 +171,7 @@ class SequencerConductor: ObservableObject {
         
         mixer.addInput(callbackInst)
         engine.output = mixer
-        
+    
         // add note info to every step on all tracks
         
         print(data.noteStatus)

@@ -16,7 +16,7 @@ struct KorgLowPassFilterView: View {
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
-                    Text("fltr:")
+                    Text("Filter")
                     Spacer()
                     Image(systemName: self.conductor.filterData.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
@@ -32,7 +32,7 @@ struct KorgLowPassFilterView: View {
                 
                 VStack {
                     HStack {
-                        Text("frq")
+                        Image(systemName: "scissors")
                         Spacer()
                         Slider(value: self.$conductor.filterData.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
                             Text("frequency")
@@ -40,7 +40,7 @@ struct KorgLowPassFilterView: View {
                         .accentColor(.yellow)
                     }
                     HStack {
-                        Text("rsns")
+                        Image(systemName: "rotate.3d")
                         Spacer()
                         Slider(value: self.$conductor.filterData.resonance, in: 0.0...0.30, label: {
                             Text("resonance")
@@ -48,7 +48,7 @@ struct KorgLowPassFilterView: View {
                         .accentColor(.yellow)
                     }
                     HStack {
-                        Text("drv")
+                        Image(systemName: "scribble.variable")
                         Spacer()
                         Slider(value: self.$conductor.filterData.saturation, in: 0.0...10.0, label: {
                             Text("drive")

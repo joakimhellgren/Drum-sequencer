@@ -18,7 +18,7 @@ struct CostelloReverbData {
     var feedback: AUValue = 0.6
     var cutoffFrequency: AUValue = 4_000.0
     var rampDuration: AUValue = 0.02
-    var balance: AUValue = 0.0
+    var balance: AUValue = 0.3
 }
 
 struct ClipperData {

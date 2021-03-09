@@ -14,7 +14,7 @@ struct CostelloReverbView: View {
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
-                    Text("rvrb:")
+                    Text("Reverb")
                     Spacer()
                     Image(systemName: self.conductor.reverbData.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
@@ -27,9 +27,10 @@ struct CostelloReverbView: View {
                 }
                 
                 Spacer()
+                
                 VStack {
                     HStack {
-                        Text("fdbk")
+                        Image(systemName: "infinity.circle")
                         Spacer()
                         Slider(value: self.$conductor.reverbData.feedback, in: 0.0 ... 1.0, label: {
                             Text("Feedback")
@@ -37,7 +38,7 @@ struct CostelloReverbView: View {
                         .accentColor(.blue)
                     }
                     HStack {
-                        Text("frq")
+                        Image(systemName: "scissors")
                         Spacer()
                         Slider(value: self.$conductor.reverbData.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
                             Text("Cutoff")
@@ -45,7 +46,7 @@ struct CostelloReverbView: View {
                         .accentColor(.blue)
                     }
                     HStack {
-                        Text("blnc")
+                        Image(systemName: "dial.min")
                         Spacer()
                         Slider(value: self.$conductor.reverbData.balance, in: 0 ... 1, label: {
                             Text("Balance")

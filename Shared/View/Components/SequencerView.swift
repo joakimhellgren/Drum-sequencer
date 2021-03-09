@@ -55,9 +55,11 @@ struct SequencerView: View {
                                             width: Int(round(conductor.sequencer.tracks[trackIndex].currentPosition)) == index ? 2 : 1 )
                                 .gesture(TapGesture().onEnded {
                                         if conductor.data.noteStatus[trackIndex][index] {
+                                            if isMuted[trackIndex] { return }
                                             conductor.sequencer.tracks[trackIndex].sequence.removeNote(at: Double(index))
                                             conductor.data.noteStatus[trackIndex][index] = false
                                         } else {
+                                            if isMuted[trackIndex] { return }
                                             conductor.updateSequence(note: conductor.data.notes[trackIndex], position: Double(index), track: trackIndex)
                                             conductor.data.noteStatus[trackIndex][index] = true
                                         }

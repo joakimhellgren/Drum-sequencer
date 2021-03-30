@@ -79,6 +79,27 @@ struct SequencerData {
             Sample("8", file: "Samples/kit6/6_D2.wav", note: 38)
         ],
         
+        [
+            Sample("1", file: "Samples/kit7/7_C1.wav", note: 24),
+            Sample("2", file: "Samples/kit7/7_D1.wav", note: 26),
+            Sample("3", file: "Samples/kit7/7_D#1.wav", note: 27),
+            Sample("4", file: "Samples/kit7/7_F1.wav", note: 29),
+            Sample("5", file: "Samples/kit7/7_F#1.wav", note: 30),
+            Sample("6", file: "Samples/kit7/7_A#1.wav", note: 34),
+            Sample("7", file: "Samples/kit7/7_B1.wav", note: 35),
+            Sample("8", file: "Samples/kit7/7_D2.wav", note: 38)
+        ],
+        
+        [
+            Sample("1", file: "Samples/kit8/8_C1.wav", note: 24),
+            Sample("2", file: "Samples/kit8/8_D1.wav", note: 26),
+            Sample("3", file: "Samples/kit8/8_D#1.wav", note: 27),
+            Sample("4", file: "Samples/kit8/8_F1.wav", note: 29),
+            Sample("5", file: "Samples/kit8/8_F#1.wav", note: 30),
+            Sample("6", file: "Samples/kit8/8_A#1.wav", note: 34),
+            Sample("7", file: "Samples/kit8/8_B1.wav", note: 35),
+            Sample("8", file: "Samples/kit8/8_D2.wav", note: 38)
+        ],
     ]
     
 }

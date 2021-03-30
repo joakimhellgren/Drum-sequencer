@@ -72,6 +72,7 @@ class SequencerConductor: ObservableObject {
         didSet {
             data.isPlaying ? sequencer.play() : sequencer.stop()
             sequencer.tempo = data.tempo
+        
         }
     }
     
@@ -142,7 +143,7 @@ class SequencerConductor: ObservableObject {
     
     init() {
        
-        Settings.bufferLength = .shortest
+        //Settings.bufferLength = .shortest
        
         
         

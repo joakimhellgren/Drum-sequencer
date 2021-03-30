@@ -14,16 +14,11 @@ struct MainView: View {
     @State var kit: Int
     let viewWidth = UIScreen.main.bounds.width
     let viewHeight = UIScreen.main.bounds.height
-    
     let lightGray = Color(UIColor.secondarySystemBackground)
     
     var body: some View {
-        
-        
         VStack {
-            
             HStack {
-                
                 Group {
                     Button("-") {
                         if conductor.data.tempo > 50 {
@@ -36,26 +31,15 @@ struct MainView: View {
                         }
                     }.accentColor(.red)
                 }.frame(width: 32, height: 32)
-                
                 MetronomeView(conductor: conductor)
             }
-            
-            
+
             HStack {
                 SequencerView(conductor: conductor)
-                
             }
-            
-            
-            
-            
-            
-            
-            
             
             HStack {
                 VStack {
-                    
                     Image(systemName: "waveform.path.ecg.rectangle")
                         .resizable()
                         .foregroundColor(Color(UIColor.darkGray))
@@ -78,15 +62,14 @@ struct MainView: View {
                     VStack {
                         KorgLowPassFilterView(conductor: conductor).frame(width: viewWidth / 6)
                         VariableDelayView(conductor: conductor).frame(width: viewWidth / 6)
-                    }
+                    }.padding(.horizontal)
+                    
                     VStack {
                         CostelloReverbView(conductor: conductor).frame(width: viewWidth / 6)
                         ClipperView(conductor: conductor).frame(width: viewWidth / 6)
-                    }
+                    }.padding(.horizontal)
                 }
-                
-            }
-            
+            }.padding()
         }
         .onAppear {
             self.conductor.start(kit: kit)
@@ -94,8 +77,7 @@ struct MainView: View {
         }
         .onDisappear {
             self.conductor.stop()
-        }
-        
+        }        
     }
 }
 

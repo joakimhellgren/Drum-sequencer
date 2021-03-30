@@ -18,6 +18,7 @@ struct SequencerView: View {
     }
     
     var body: some View {
+        
         VStack {
             ForEach(0 ..< conductor.data.trackCount, id: \.self) { trackIndex in
                 HStack {
@@ -28,6 +29,8 @@ struct SequencerView: View {
                                 let trackLength = Double(conductor.data.trackSignature[trackIndex])
                                 
                                 conductor.sequencer.tracks[trackIndex].length = trackLength
+                                
+                                
                             }
                         }.accentColor(.primary)
                         

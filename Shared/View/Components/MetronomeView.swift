@@ -12,19 +12,8 @@ struct MetronomeView: View {
     let lightGray = Color(UIColor.secondarySystemBackground)
     let darkGray = Color(UIColor.darkGray)
     var body: some View {
+        // nodes for the metronome track (see sequencerview.swift for reference)
         HStack {
-//            Stepper("", onIncrement: {
-//                if conductor.data.metronomeSignature < 16 {
-//                    conductor.data.metronomeSignature += 1
-//                    conductor.sequencer.tracks[conductor.data.trackCount].length = Double(conductor.data.metronomeSignature)
-//                }
-//            }, onDecrement: {
-//                if conductor.data.metronomeSignature > 1 {
-//                    conductor.data.metronomeSignature -= 1
-//                    conductor.sequencer.tracks[conductor.data.trackCount].length = Double(conductor.data.metronomeSignature)
-//                }
-//            })
-//            .frame(maxWidth: 100)
             ForEach(0 ..< conductor.data.metronomeSignature, id: \.self) { index in
                 ZStack {
                     Circle().foregroundColor(conductor.data.currentBeat[0] == index ? darkGray : .clear)
@@ -33,6 +22,7 @@ struct MetronomeView: View {
                 }
             }
             Group {
+                // displays current bpm (not sure if this is the correct equation for BPM)
                 Text("\(Int(conductor.data.tempo / 4))").foregroundColor(.primary)
             }.frame(width: 48, height: 32)
         }.frame(height: 32)

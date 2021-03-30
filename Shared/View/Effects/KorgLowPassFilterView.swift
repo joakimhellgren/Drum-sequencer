@@ -13,6 +13,7 @@ struct KorgLowPassFilterView: View {
     
     var body: some View {
         ZStack {
+            
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
@@ -36,7 +37,7 @@ struct KorgLowPassFilterView: View {
                         Spacer()
                         Slider(value: self.$conductor.filterData.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
                             Text("frequency")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.yellow)
                     }
                     HStack {
@@ -44,7 +45,7 @@ struct KorgLowPassFilterView: View {
                         Spacer()
                         Slider(value: self.$conductor.filterData.resonance, in: 0.0...0.30, label: {
                             Text("resonance")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.yellow)
                     }
                     HStack {
@@ -52,12 +53,14 @@ struct KorgLowPassFilterView: View {
                         Spacer()
                         Slider(value: self.$conductor.filterData.saturation, in: 0.0...10.0, label: {
                             Text("drive")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.yellow)
                     }
                 }
-            }.padding(8)
+            }.padding()
+            .frame(width: 194, height: 164)
         }
+        
         
         
         

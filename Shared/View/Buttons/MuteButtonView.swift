@@ -16,7 +16,7 @@ struct MuteButtonView: View {
     func colorSetter(status: [Bool], pos: Int) -> Color {
         if isMuted[pos] { return Color.red } else { return Color.primary }
     }
-    //@ObservedObject var conductor: SequencerConductor
+    
     var body: some View {
         VStack {
             ForEach(0 ..< conductor.data.trackCount, id: \.self) { trackIndex in

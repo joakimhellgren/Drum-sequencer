@@ -33,25 +33,22 @@ struct ClipperView: View {
                         Image(systemName: "highlighter")
                         Spacer()
                         Slider(value: self.$conductor.clipperData.limit, in: 0.0 ... 1.0, label: {
-                            Text("limit").frame(width: 120)
+                            Text("limit")
                         })
-                        .frame(width: 120)
                         .accentColor(.green)
                     }
                     HStack {
                         Image(systemName: "dial.min")
                         Spacer()
                         Slider(value: self.$conductor.clipperData.balance, in: 0.1 ... 1.0, label: {
-                            Text("balance").frame(width: 120)
+                            Text("balance")
                         })
-                        .frame(width: 120)
                         .accentColor(.green)
                     }
                 }
-                
-            }.padding(8)
+            }.padding()
+            .frame(width: 194, height: 164)
         }
-        
     }
 }
 

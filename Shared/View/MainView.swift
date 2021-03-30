@@ -33,24 +33,22 @@ struct MainView: View {
                 }.frame(width: 32, height: 32)
                 MetronomeView(conductor: conductor)
             }
-
-            HStack {
-                SequencerView(conductor: conductor)
-            }
+            
+            SequencerView(conductor: conductor)
             
             HStack {
                 VStack {
                     Image(systemName: "waveform.path.ecg.rectangle")
                         .resizable()
                         .foregroundColor(Color(UIColor.darkGray))
-                        .frame(width: 38, height: 32)
+                        .frame(maxWidth: 38, maxHeight: 32)
                         .onTapGesture {
                             self.kitSelectionActive.toggle()
                         }.padding(.vertical)
                     Spacer()
                     PlayButtonView(conductor: conductor).padding(.vertical)
                     RecordButtonView(isRecording: $isRecording).padding(.vertical)
-                }.frame(width: 68)
+                }.frame(maxWidth: 68)
                 
                 VStack {
                     PadsView(conductor: conductor, isRecording: isRecording) { pad in
@@ -58,16 +56,18 @@ struct MainView: View {
                     }
                 }
                 
-                HStack {
-                    VStack {
-                        KorgLowPassFilterView(conductor: conductor).frame(width: viewWidth / 6)
-                        VariableDelayView(conductor: conductor).frame(width: viewWidth / 6)
-                    }.padding(.horizontal)
-                    
-                    VStack {
-                        CostelloReverbView(conductor: conductor).frame(width: viewWidth / 6)
-                        ClipperView(conductor: conductor).frame(width: viewWidth / 6)
-                    }.padding(.horizontal)
+                VStack {
+                    HStack {
+                        VStack {
+                            KorgLowPassFilterView(conductor: conductor)
+                            VariableDelayView(conductor: conductor)
+                        }
+                        
+                        VStack {
+                            CostelloReverbView(conductor: conductor)
+                            ClipperView(conductor: conductor)
+                        }
+                    }
                 }
             }.padding()
         }

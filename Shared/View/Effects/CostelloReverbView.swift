@@ -34,7 +34,7 @@ struct CostelloReverbView: View {
                         Spacer()
                         Slider(value: self.$conductor.reverbData.feedback, in: 0.0 ... 1.0, label: {
                             Text("Feedback")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.blue)
                     }
                     HStack {
@@ -42,7 +42,7 @@ struct CostelloReverbView: View {
                         Spacer()
                         Slider(value: self.$conductor.reverbData.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
                             Text("Cutoff")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.blue)
                     }
                     HStack {
@@ -50,11 +50,12 @@ struct CostelloReverbView: View {
                         Spacer()
                         Slider(value: self.$conductor.reverbData.balance, in: 0 ... 1, label: {
                             Text("Balance")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.blue)
                     }
                 }
-            }.padding(8)
+            }.padding()
+            .frame(width: 194, height: 164)
         }
     }
 }

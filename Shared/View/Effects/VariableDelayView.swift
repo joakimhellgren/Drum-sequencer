@@ -35,7 +35,7 @@ struct VariableDelayView: View {
                         Spacer()
                         Slider(value: self.$conductor.delayData.time, in: 0.0 ... 0.5, label: {
                             Text("Time")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.red)
                     }
                     HStack {
@@ -43,7 +43,7 @@ struct VariableDelayView: View {
                         Spacer()
                         Slider(value: self.$conductor.delayData.feedback, in: 0 ... 1, label: {
                             Text("Feedback")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.red)
                     }
                     HStack {
@@ -51,15 +51,12 @@ struct VariableDelayView: View {
                         Spacer()
                         Slider(value: self.$conductor.delayData.balance, in: 0 ... 1, label: {
                             Text("Balance")
-                        }).frame(width: 120)
+                        })
                         .accentColor(.red)
                     }
                 }
-                
-                
-            }.padding(8)
-            
-            
+            }.padding()
+            .frame(width: 194, height: 164)
         }
     }
 }

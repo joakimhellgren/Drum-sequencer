@@ -21,6 +21,10 @@ struct PadsView: View {
 
     var body: some View {
         VStack {
+            
+            // most of this code is from the AudioKit Cookbook with some modeifications to fit my use case.
+            // https://github.com/AudioKit/Cookbook
+            
             ForEach(0..<2, id: \.self) { row in
                 HStack {
                     ForEach(0..<4, id: \.self) { column in

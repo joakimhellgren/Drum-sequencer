@@ -12,13 +12,13 @@ import Foundation
 
 struct PadsView: View {
     @ObservedObject var conductor: SequencerConductor
+    @State var downPads: [Int] = []
     var isRecording: Bool
     let darkGray = Color(UIColor.darkGray)
     let lightGray = Color(UIColor.secondarySystemBackground)
 
     var padsAction: (_ padNumber: Int) -> Void
-    @State var downPads: [Int] = []
-
+    
     var body: some View {
         VStack {
             
@@ -51,9 +51,6 @@ struct PadsView: View {
                                     conductor.updateSequence(note: conductor.data.notes[trackNumber], position: currentPos > 15 ? 15 : currentPos, track: trackNumber)
                                     conductor.data.noteStatus[trackNumber][Int(currentPos > 15.0 ? 15.0 : currentPos)] = true
                                 }
-                                
-        
-                                
                             }
                         }).onEnded({_ in
                             self.downPads.removeAll(where: { $0 == row * 4 + column })

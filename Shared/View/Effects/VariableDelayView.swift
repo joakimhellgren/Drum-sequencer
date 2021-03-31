@@ -11,18 +11,20 @@ struct VariableDelayView: View {
     @ObservedObject var conductor: SequencerConductor
     
     var body: some View {
+        var data = self.conductor.delayData
+        let sliderRef = self.$conductor.delayData
         ZStack {
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
                     Text("Delay")
                     Spacer()
-                    Image(systemName: self.conductor.delayData.balance > 0 ? "circle.fill" : "circle")
+                    Image(systemName: data.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
-                            if self.conductor.delayData.balance > 0 {
-                                self.conductor.delayData.balance = 0
+                            if data.balance > 0 {
+                                data.balance = 0
                             } else {
-                                self.conductor.delayData.balance = 0.1
+                                data.balance = 0.1
                             }
                         })
                 }
@@ -33,7 +35,7 @@ struct VariableDelayView: View {
                     HStack {
                         Image(systemName: "clock")
                         Spacer()
-                        Slider(value: self.$conductor.delayData.time, in: 0.0 ... 0.5, label: {
+                        Slider(value: sliderRef.time, in: 0.0 ... 0.5, label: {
                             Text("Time")
                         })
                         .accentColor(.red)
@@ -41,7 +43,7 @@ struct VariableDelayView: View {
                     HStack {
                         Image(systemName: "infinity.circle")
                         Spacer()
-                        Slider(value: self.$conductor.delayData.feedback, in: 0 ... 1, label: {
+                        Slider(value: sliderRef.feedback, in: 0 ... 1, label: {
                             Text("Feedback")
                         })
                         .accentColor(.red)
@@ -49,7 +51,7 @@ struct VariableDelayView: View {
                     HStack {
                         Image(systemName: "dial.min")
                         Spacer()
-                        Slider(value: self.$conductor.delayData.balance, in: 0 ... 1, label: {
+                        Slider(value: sliderRef.balance, in: 0 ... 1, label: {
                             Text("Balance")
                         })
                         .accentColor(.red)

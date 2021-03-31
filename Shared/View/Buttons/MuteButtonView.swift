@@ -31,13 +31,9 @@ struct MuteButtonView: View {
                             sequences[trackIndex].removeAll()
                         }
                     }
-                        
-                       
                 }.foregroundColor(colorSetter(status: isMuted, pos: trackIndex))
             }
         }
-
-        
     }
 }
 

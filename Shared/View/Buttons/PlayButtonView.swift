@@ -22,8 +22,4 @@ struct PlayButtonView: View {
     }
 }
 
-struct PlayButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+

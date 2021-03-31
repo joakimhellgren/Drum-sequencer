@@ -10,18 +10,20 @@ import SwiftUI
 struct CostelloReverbView: View {
     @ObservedObject var conductor: SequencerConductor
     var body: some View {
+        var data = self.conductor.reverbData
+        let sliderRef = self.$conductor.reverbData
         ZStack {
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
                     Text("Reverb")
                     Spacer()
-                    Image(systemName: self.conductor.reverbData.balance > 0 ? "circle.fill" : "circle")
+                    Image(systemName: data.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
-                            if self.conductor.reverbData.balance == 1 {
-                                self.conductor.reverbData.balance = 0
+                            if data.balance == 1 {
+                                data.balance = 0
                             } else {
-                                self.conductor.reverbData.balance = 0.3
+                                data.balance = 0.3
                             }
                         })
                 }
@@ -32,7 +34,7 @@ struct CostelloReverbView: View {
                     HStack {
                         Image(systemName: "infinity.circle")
                         Spacer()
-                        Slider(value: self.$conductor.reverbData.feedback, in: 0.0 ... 1.0, label: {
+                        Slider(value: sliderRef.feedback, in: 0.0 ... 1.0, label: {
                             Text("Feedback")
                         })
                         .accentColor(.blue)
@@ -40,7 +42,7 @@ struct CostelloReverbView: View {
                     HStack {
                         Image(systemName: "scissors")
                         Spacer()
-                        Slider(value: self.$conductor.reverbData.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
+                        Slider(value: sliderRef.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
                             Text("Cutoff")
                         })
                         .accentColor(.blue)
@@ -48,7 +50,7 @@ struct CostelloReverbView: View {
                     HStack {
                         Image(systemName: "dial.min")
                         Spacer()
-                        Slider(value: self.$conductor.reverbData.balance, in: 0 ... 1, label: {
+                        Slider(value: sliderRef.balance, in: 0 ... 1, label: {
                             Text("Balance")
                         })
                         .accentColor(.blue)

@@ -9,66 +9,55 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var conductor = SequencerConductor()
-    @State var isRecording: Bool = false
+    
     @Binding var kitSelectionActive: Bool
     @State var kit: Int
-    let viewWidth = UIScreen.main.bounds.width
-    let viewHeight = UIScreen.main.bounds.height
-    let lightGray = Color(UIColor.secondarySystemBackground)
+    
+    @State var isRecording: Bool = false
     @State var padViewActive: Bool = true
     
+    let viewWidth = UIScreen.main.bounds.width, viewHeight = UIScreen.main.bounds.height, lightGray = Color(UIColor.secondarySystemBackground)
+    
     var body: some View {
+        var data = conductor.data
         VStack {
+            // Main timeline / metronome view.
             HStack {
                 Group {
-                    Button("-") {
-                        if conductor.data.tempo > 50 {
-                            conductor.data.tempo -= 4
-                        }
-                    }.accentColor(.red)
-                    Button("+") {
-                        if conductor.data.tempo < 560 {
-                            conductor.data.tempo += 4
-                        }
-                    }.accentColor(.red)
-                }.frame(width: 32, height: 32)
+                    Button("-") { if data.tempo > 50 { data.tempo -= 4 }}
+                        .accentColor(.red)
+                    Button("+") { if data.tempo < 560 { data.tempo += 4 }}
+                        .accentColor(.red)
+                }
+                .frame(width: 32, height: 32)
                 MetronomeView(conductor: conductor)
             }
             
+            // Main sequencer (top part of the screen)
             SequencerView(conductor: conductor)
             
-            
-                HStack {
-                    
-                    if padViewActive {
-                        HStack {
-                            
-                            
-                            VStack {
-                                PadsView(conductor: conductor, isRecording: isRecording) { pad in
-                                    conductor.playPad(padNumber: pad)
-                                }
-                            }
-                        }
-                    } else {
+            // Drum pads + Effects
+            HStack {
+                if padViewActive {
+                    PadsView(conductor: conductor, isRecording: isRecording) { pad in
+                        conductor.playPad(padNumber: pad)
+                    }
+                } else {
+                    HStack {
                         VStack {
-                            HStack {
-                                VStack {
-                                    KorgLowPassFilterView(conductor: conductor)
-                                    VariableDelayView(conductor: conductor)
-                                }
-                                
-                                VStack {
-                                    CostelloReverbView(conductor: conductor)
-                                    ClipperView(conductor: conductor)
-                                }
-                            }
+                            KorgLowPassFilterView(conductor: conductor)
+                            VariableDelayView(conductor: conductor)
+                        }
+                        
+                        VStack {
+                            CostelloReverbView(conductor: conductor)
+                            ClipperView(conductor: conductor)
                         }
                     }
-                    
-                    
-                    
                 }
+            }
+            
+            // Switch view / Play button + Record button (AKA bottom bar, i guess?)
             HStack {
                 Image(systemName: padViewActive ? "waveform.path.ecg.rectangle" : "waveform.path.ecg.rectangle.fill")
                     .resizable()

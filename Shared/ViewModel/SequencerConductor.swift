@@ -16,7 +16,6 @@ class SequencerConductor: ObservableObject {
     let mixer = Mixer()
     var sequencer = Sequencer()
     
-    
     let reverb: CostelloReverb
     let dryWetReverb: DryWetMixer
     
@@ -26,13 +25,16 @@ class SequencerConductor: ObservableObject {
     let filter: KorgLowPassFilter
     let dryWetFilter: DryWetMixer
     
-    
     let clipper: Clipper
     let amplifier: Fader
     let dryWetClipper: DryWetMixer
     
+    // this is where we store all sounds for our kit
     var samples: [Sample] = []
     
+    // MARK: Configure effects
+    
+    // saturator / clipper
     @Published var clipperData = ClipperData() {
         didSet {
             clipper.$limit.ramp(to: clipperData.limit, duration: clipperData.rampDuration)
@@ -43,6 +45,7 @@ class SequencerConductor: ObservableObject {
         }
     }
     
+    // reverb
     @Published var reverbData = CostelloReverbData() {
         didSet {
             reverb.$feedback.ramp(to: reverbData.feedback, duration: reverbData.rampDuration)
@@ -51,6 +54,7 @@ class SequencerConductor: ObservableObject {
         }
     }
     
+    // filter
     @Published var filterData = KorgLowPassFilterData() {
         didSet {
             filter.$cutoffFrequency.ramp(to: filterData.cutoffFrequency, duration: filterData.rampDuration)
@@ -60,6 +64,7 @@ class SequencerConductor: ObservableObject {
         }
     }
     
+    // delay
     @Published var delayData = VariableDelayData() {
         didSet {
             delay.$time.ramp(to: delayData.time, duration: delayData.rampDuration)
@@ -68,6 +73,7 @@ class SequencerConductor: ObservableObject {
         }
     }
     
+    // main controls
     @Published var data = SequencerData() {
         didSet {
             data.isPlaying ? sequencer.play() : sequencer.stop()
@@ -75,6 +81,8 @@ class SequencerConductor: ObservableObject {
         
         }
     }
+    
+    // MARK: this function is a WIP
     
     func addTrack(name: String, file: String, note: Int) {
         
@@ -87,20 +95,23 @@ class SequencerConductor: ObservableObject {
         data.noteStatus.append([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
         data.trackSignature.append(16)
         data.trackCount += 1
-        
         let _ = sequencer.addTrack(for: sampler)
         //start()
         setupMetronome()
         updateSequence(note: note, position: 0, track: data.trackCount - 1)
-        
     }
+    
+    // every time we want to add a note to one of our tracks
+    // we call this function to update the state of the sequencer
     
     func updateSequence(note: Int, position: Double, track: Int) {
         var selectedTrack = sequencer.tracks[track]
-    
         let notes = data.noteStatus[track]
+        // check if there is any notes on the node in front of the node that was selected
         if notes[(Int(position) + 1) % notes.count] {
+            // make selected node's note length will not overlap with the next node's note if there is one present.
             selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: round(position), duration: 0.95)
+            // if the last node in the sequence was selected quantize the note to either the first index, or the last index of the sequence
             if notes[Int(position) % notes.count] {
                 if position == 0 {
                     selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: Double(selectedTrack.sequence.notes.count), duration: 0.95)
@@ -109,14 +120,14 @@ class SequencerConductor: ObservableObject {
                     selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: 0.0, duration: 0.95)
                 }
             }
+            // if there's no note on the node in front of the selected node
+            // we can increase the length of the node to let it "ring" our
         } else {
             selectedTrack.sequence.add(noteNumber: MIDINoteNumber(note), position: round(position), duration: 1.95)
         }
     
 
-        
-        
-        
+        // updates our UI state reference and metronome
         selectedTrack = sequencer.tracks[data.trackCount]
         selectedTrack.length = Double(data.metronomeSignature)
         selectedTrack.clear()
@@ -142,12 +153,7 @@ class SequencerConductor: ObservableObject {
     }
     
     init() {
-       
-        //Settings.bufferLength = .shortest
-       
-        
-        
-        
+        // configure signal path
         clipper = Clipper(sampler)
         amplifier = Fader(clipper)
         dryWetClipper = DryWetMixer(sampler, amplifier)
@@ -174,13 +180,11 @@ class SequencerConductor: ObservableObject {
         engine.output = mixer
     
         // add note info to every step on all tracks
-        
-        print(data.noteStatus)
+        // print(data.noteStatus)
         for _ in 1 ..< data.metronomeSignature {
             for trackIndex in 0 ..< data.noteStatus.count {
                 data.noteStatus[trackIndex].append(false)
             }
-            
         }
         
         for track in sequencer.tracks {
@@ -190,6 +194,7 @@ class SequencerConductor: ObservableObject {
         }
     }
     
+    // plays a sound (see PadsView.swift for ref)
     func playPad(padNumber: Int) {
         print(padNumber)
         try? sampler.play(noteNumber: MIDINoteNumber(samples[padNumber].midiNote))
@@ -220,8 +225,4 @@ class SequencerConductor: ObservableObject {
         sequencer.stop()
         engine.stop()
     }
-    
-    
-    
-    
 }

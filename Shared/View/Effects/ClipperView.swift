@@ -10,18 +10,20 @@ import SwiftUI
 struct ClipperView: View {
     @ObservedObject var conductor: SequencerConductor
     var body: some View {
+        var data = self.conductor.clipperData
+        let sliderRef = self.$conductor.clipperData
         ZStack {
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
                     Text("Clipper")
                     Spacer()
-                    Image(systemName: self.conductor.clipperData.balance > 0 ? "circle.fill" : "circle")
+                    Image(systemName: data.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
-                            if self.conductor.clipperData.balance == 1 {
-                                self.conductor.clipperData.balance = 0
+                            if data.balance == 1 {
+                                data.balance = 0
                             } else {
-                                self.conductor.clipperData.balance = 1
+                                data.balance = 1
                             }
                         })
                 }
@@ -32,7 +34,7 @@ struct ClipperView: View {
                     HStack {
                         Image(systemName: "highlighter")
                         Spacer()
-                        Slider(value: self.$conductor.clipperData.limit, in: 0.0 ... 1.0, label: {
+                        Slider(value: sliderRef.limit, in: 0.0 ... 1.0, label: {
                             Text("limit")
                         })
                         .accentColor(.green)
@@ -40,7 +42,7 @@ struct ClipperView: View {
                     HStack {
                         Image(systemName: "dial.min")
                         Spacer()
-                        Slider(value: self.$conductor.clipperData.balance, in: 0.1 ... 1.0, label: {
+                        Slider(value: sliderRef.balance, in: 0.1 ... 1.0, label: {
                             Text("balance")
                         })
                         .accentColor(.green)

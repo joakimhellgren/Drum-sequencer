@@ -12,30 +12,25 @@ struct KorgLowPassFilterView: View {
     @State var isOn = true
     
     var body: some View {
+        var data = self.conductor.filterData
+        let sliderRef = self.$conductor.filterData
         ZStack {
-            
             Rectangle().cornerRadius(8.0).foregroundColor(Color(UIColor.secondarySystemBackground))
             VStack {
                 HStack {
                     Text("Filter")
                     Spacer()
-                    Image(systemName: self.conductor.filterData.balance > 0 ? "circle.fill" : "circle")
+                    Image(systemName: data.balance > 0 ? "circle.fill" : "circle")
                         .gesture(TapGesture().onEnded {
-                            if self.conductor.filterData.balance == 1 {
-                                self.conductor.filterData.balance = 0
-                            } else {
-                                self.conductor.filterData.balance = 1
-                            }
+                            if data.balance == 1 { data.balance = 0 } else { data.balance = 1 }
                         })
                 }
-                
                 Spacer()
-                
                 VStack {
                     HStack {
                         Image(systemName: "scissors")
                         Spacer()
-                        Slider(value: self.$conductor.filterData.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
+                        Slider(value: sliderRef.cutoffFrequency, in: 0.0 ... 7_000.0, label: {
                             Text("frequency")
                         })
                         .accentColor(.yellow)
@@ -43,7 +38,7 @@ struct KorgLowPassFilterView: View {
                     HStack {
                         Image(systemName: "rotate.3d")
                         Spacer()
-                        Slider(value: self.$conductor.filterData.resonance, in: 0.0...0.30, label: {
+                        Slider(value: sliderRef.resonance, in: 0.0...0.30, label: {
                             Text("resonance")
                         })
                         .accentColor(.yellow)
@@ -51,7 +46,7 @@ struct KorgLowPassFilterView: View {
                     HStack {
                         Image(systemName: "scribble.variable")
                         Spacer()
-                        Slider(value: self.$conductor.filterData.saturation, in: 0.0...10.0, label: {
+                        Slider(value: sliderRef.saturation, in: 0.0...10.0, label: {
                             Text("drive")
                         })
                         .accentColor(.yellow)

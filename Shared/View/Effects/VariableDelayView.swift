@@ -37,7 +37,7 @@ struct VariableDelayView: View {
                             Text("Time")
                         })
                         .accentColor(.red)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                     HStack {
                         Image(systemName: "infinity.circle")
                         Spacer()
@@ -45,7 +45,7 @@ struct VariableDelayView: View {
                             Text("Feedback")
                         })
                         .accentColor(.red)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                     HStack {
                         Image(systemName: "dial.min")
                         Spacer()
@@ -53,10 +53,10 @@ struct VariableDelayView: View {
                             Text("Balance")
                         })
                         .accentColor(.red)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                 }
             }.padding()
-            .frame(width: 194, height: 164)
+            .frame(width: (UIScreen.main.bounds.width / 4) - 32)
         }
     }
 }

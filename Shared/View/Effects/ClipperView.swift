@@ -36,7 +36,7 @@ struct ClipperView: View {
                             Text("limit")
                         })
                         .accentColor(.green)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                     HStack {
                         Image(systemName: "dial.min")
                         Spacer()
@@ -44,10 +44,10 @@ struct ClipperView: View {
                             Text("balance")
                         })
                         .accentColor(.green)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                 }
             }.padding()
-            .frame(width: 194, height: 164)
+            .frame(width: (UIScreen.main.bounds.width / 4) - 32)
         }
     }
 }

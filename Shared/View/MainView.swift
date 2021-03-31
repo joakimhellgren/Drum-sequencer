@@ -15,6 +15,7 @@ struct MainView: View {
     let viewWidth = UIScreen.main.bounds.width
     let viewHeight = UIScreen.main.bounds.height
     let lightGray = Color(UIColor.secondarySystemBackground)
+    @State var padViewActive: Bool = true
     
     var body: some View {
         VStack {
@@ -36,40 +37,52 @@ struct MainView: View {
             
             SequencerView(conductor: conductor)
             
+            
+                HStack {
+                    
+                    if padViewActive {
+                        HStack {
+                            
+                            
+                            VStack {
+                                PadsView(conductor: conductor, isRecording: isRecording) { pad in
+                                    conductor.playPad(padNumber: pad)
+                                }
+                            }
+                        }
+                    } else {
+                        VStack {
+                            HStack {
+                                VStack {
+                                    KorgLowPassFilterView(conductor: conductor)
+                                    VariableDelayView(conductor: conductor)
+                                }
+                                
+                                VStack {
+                                    CostelloReverbView(conductor: conductor)
+                                    ClipperView(conductor: conductor)
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                }
             HStack {
-                VStack {
-                    Image(systemName: "waveform.path.ecg.rectangle")
-                        .resizable()
-                        .foregroundColor(Color(UIColor.darkGray))
-                        .frame(maxWidth: 38, maxHeight: 32)
-                        .onTapGesture {
-                            self.kitSelectionActive.toggle()
-                        }.padding(.vertical)
-                    Spacer()
-                    PlayButtonView(conductor: conductor).padding(.vertical)
-                    RecordButtonView(isRecording: $isRecording).padding(.vertical)
-                }.frame(maxWidth: 68)
-                
-                VStack {
-                    PadsView(conductor: conductor, isRecording: isRecording) { pad in
-                        conductor.playPad(padNumber: pad)
-                    }
-                }
-                
-                VStack {
-                    HStack {
-                        VStack {
-                            KorgLowPassFilterView(conductor: conductor)
-                            VariableDelayView(conductor: conductor)
-                        }
-                        
-                        VStack {
-                            CostelloReverbView(conductor: conductor)
-                            ClipperView(conductor: conductor)
-                        }
-                    }
-                }
-            }.padding()
+                Image(systemName: padViewActive ? "waveform.path.ecg.rectangle" : "waveform.path.ecg.rectangle.fill")
+                    .resizable()
+                    .foregroundColor(Color(UIColor.darkGray))
+                    .frame(maxWidth: 38, maxHeight: 32)
+                    .onTapGesture {
+                        //self.kitSelectionActive.toggle()
+                        self.padViewActive.toggle()
+                    }.padding(.vertical)
+                Spacer()
+                PlayButtonView(conductor: conductor).padding(.vertical)
+                RecordButtonView(isRecording: $isRecording).padding(.vertical)
+            }.padding(.horizontal)
+            
         }
         .onAppear {
             self.conductor.start(kit: kit)

@@ -39,7 +39,7 @@ struct KorgLowPassFilterView: View {
                             Text("frequency")
                         })
                         .accentColor(.yellow)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                     HStack {
                         Image(systemName: "rotate.3d")
                         Spacer()
@@ -47,7 +47,7 @@ struct KorgLowPassFilterView: View {
                             Text("resonance")
                         })
                         .accentColor(.yellow)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                     HStack {
                         Image(systemName: "scribble.variable")
                         Spacer()
@@ -55,10 +55,10 @@ struct KorgLowPassFilterView: View {
                             Text("drive")
                         })
                         .accentColor(.yellow)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                 }
             }.padding()
-            .frame(width: 194, height: 164)
+            .frame(width: (UIScreen.main.bounds.width / 4) - 32)
         }
         
         

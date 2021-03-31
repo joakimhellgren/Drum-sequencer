@@ -36,7 +36,7 @@ struct CostelloReverbView: View {
                             Text("Feedback")
                         })
                         .accentColor(.blue)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                     HStack {
                         Image(systemName: "scissors")
                         Spacer()
@@ -44,7 +44,7 @@ struct CostelloReverbView: View {
                             Text("Cutoff")
                         })
                         .accentColor(.blue)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                     HStack {
                         Image(systemName: "dial.min")
                         Spacer()
@@ -52,10 +52,10 @@ struct CostelloReverbView: View {
                             Text("Balance")
                         })
                         .accentColor(.blue)
-                    }
+                    }.frame(width: UIScreen.main.bounds.width / 3)
                 }
             }.padding()
-            .frame(width: 194, height: 164)
+            .frame(width: (UIScreen.main.bounds.width / 4) - 32)
         }
     }
 }

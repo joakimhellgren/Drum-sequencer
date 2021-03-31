@@ -36,7 +36,7 @@ struct SequencerView: View {
                                 }
                             }
                         }
-                    }.frame(minWidth: 32, minHeight: 28)
+                    }.frame(width: 64)
                     
                     // main sequenencer, aka nodes. Each track has a maximum of 16 nodes and a minimum of 1 node.
                     HStack {

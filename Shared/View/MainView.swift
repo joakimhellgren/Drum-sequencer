@@ -23,13 +23,12 @@ struct MainView: View {
         VStack {
             // Main timeline / metronome view.
             HStack {
-                Group {
+                VStack {
                     Button("-") { if data.tempo > 50 { data.tempo -= 4 }}
                         .accentColor(.red)
-                    Button("+") { if data.tempo < 560 { data.tempo += 4 }}
+                    Button("+") { if data.tempo < 860 { data.tempo += 4 }}
                         .accentColor(.red)
-                }
-                .frame(width: 32, height: 32)
+                }.frame(minWidth: 24)
                 MetronomeView(conductor: conductor)
             }
             
@@ -55,14 +54,14 @@ struct MainView: View {
                         }
                     }
                 }
-            }
+            }.padding()
             
             // Switch view / Play button + Record button (AKA bottom bar, i guess?)
             HStack {
                 Image(systemName: padViewActive ? "waveform.path.ecg.rectangle" : "waveform.path.ecg.rectangle.fill")
                     .resizable()
+                    .frame(width: 24, height: 24)
                     .foregroundColor(Color(UIColor.darkGray))
-                    .frame(maxWidth: 38, maxHeight: 32)
                     .onTapGesture {
                         //self.kitSelectionActive.toggle()
                         self.padViewActive.toggle()
@@ -71,6 +70,7 @@ struct MainView: View {
                 PlayButtonView(conductor: conductor).padding(.vertical)
                 RecordButtonView(isRecording: $isRecording).padding(.vertical)
             }.padding(.horizontal)
+            .frame(height: 18)
             
         }
         .onAppear {

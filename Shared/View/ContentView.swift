@@ -16,3 +16,9 @@ struct ContentView: View {
         MainView(kitSelectionActive: $kitSelectionActive, kit: kit)
     }
 }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

@@ -17,14 +17,15 @@ struct MetronomeView: View {
             ForEach(0 ..< conductor.data.metronomeSignature, id: \.self) { index in
                 ZStack {
                     Circle().foregroundColor(conductor.data.currentBeat[0] == index ? darkGray : .clear)
-                    Text("\(index + 1)").foregroundColor(conductor.data.currentBeat[0] == index ? .primary : darkGray)
+                    Text("•").foregroundColor(conductor.data.currentBeat[0] == index ? .primary : darkGray)
                         .font(.footnote)
                 }
             }
             Group {
                 // displays current bpm (not sure if this is the correct equation for BPM)
                 Text("\(Int(conductor.data.tempo / 4))").foregroundColor(.primary)
-            }.frame(width: 48, height: 32)
+                    .font(.footnote)
+            }.frame(width: 24, height: 24)
         }.frame(height: 32)
     }
 }

@@ -36,7 +36,7 @@ struct SequencerView: View {
                                 }
                             }
                         }
-                    }.frame(width: 64)
+                    }.frame(minWidth: 24)
                     
                     // main sequenencer, aka nodes. Each track has a maximum of 16 nodes and a minimum of 1 node.
                     HStack {
@@ -64,7 +64,7 @@ struct SequencerView: View {
                                     }
                                 })
                         }
-                    }.frame(minWidth: 100, minHeight: 7)
+                    }
                     
                     // mute a track.
                     Button("M") {
@@ -76,7 +76,7 @@ struct SequencerView: View {
                             conductor.sequencer.tracks[trackIndex].sequence = sequences[trackIndex][0]
                             sequences[trackIndex].removeAll()
                         }
-                    }.frame(width: 48, height: 32).foregroundColor(colorSetter(status: isMuted, pos: trackIndex))
+                    }.frame(minWidth: 24).foregroundColor(colorSetter(status: isMuted, pos: trackIndex))
                 }
             }
         }

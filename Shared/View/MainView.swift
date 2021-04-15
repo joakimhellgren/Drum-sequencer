@@ -33,7 +33,8 @@ struct MainView: View {
             }
             
             // Main sequencer (top part of the screen)
-            SequencerView(conductor: conductor)
+                SequencerView(conductor: conductor)
+            
             
             // Drum pads + Effects
             HStack {

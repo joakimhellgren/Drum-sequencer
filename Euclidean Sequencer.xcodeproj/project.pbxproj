@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		1463374625F20EF3004E85DE /* RecordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463374525F20EF3004E85DE /* RecordButtonView.swift */; };
 		1463374725F20EF3004E85DE /* RecordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463374525F20EF3004E85DE /* RecordButtonView.swift */; };
-		1463374B25F21330004E85DE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463374A25F21330004E85DE /* TestView.swift */; };
-		1463374C25F21330004E85DE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463374A25F21330004E85DE /* TestView.swift */; };
-		146E580F25F38C9F002EE912 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E580E25F38C9F002EE912 /* ParameterSlider.swift */; };
-		146E581025F38C9F002EE912 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E580E25F38C9F002EE912 /* ParameterSlider.swift */; };
 		146E581525F38CF8002EE912 /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = 146E581425F38CF8002EE912 /* Sliders */; };
 		146E582025F38E2D002EE912 /* KorgLowPassFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */; };
 		146E582125F38E2D002EE912 /* KorgLowPassFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */; };
@@ -55,8 +51,6 @@
 
 /* Begin PBXFileReference section */
 		1463374525F20EF3004E85DE /* RecordButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButtonView.swift; sourceTree = "<group>"; };
-		1463374A25F21330004E85DE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		146E580E25F38C9F002EE912 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
 		146E581F25F38E2D002EE912 /* KorgLowPassFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KorgLowPassFilterView.swift; sourceTree = "<group>"; };
 		146E582425F3EB81002EE912 /* FXData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXData.swift; sourceTree = "<group>"; };
 		146E582925F3ECB9002EE912 /* VariableDelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableDelayView.swift; sourceTree = "<group>"; };
@@ -107,10 +101,11 @@
 			children = (
 				149D698325F0C4EA0034D30C /* ContentView.swift */,
 				149D69E425F0F23B0034D30C /* MainView.swift */,
-				14B17EC425F6B16D0095CAAA /* Components */,
+				149D69C725F0EECD0034D30C /* MetronomeView.swift */,
+				149D69DF25F0F2220034D30C /* SequencerView.swift */,
+				149D69F025F1028C0034D30C /* PadsView.swift */,
 				14B17EC125F6B1590095CAAA /* Buttons */,
 				14B17EBE25F6B1430095CAAA /* Effects */,
-				1463374A25F21330004E85DE /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,13 +120,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1466B88A25F37C2100C9CBBC /* ViewModel */ = {
+		1466B88A25F37C2100C9CBBC /* Conductor */ = {
 			isa = PBXGroup;
 			children = (
 				149D69B425F0C8160034D30C /* SequencerConductor.swift */,
-				146E580E25F38C9F002EE912 /* ParameterSlider.swift */,
 			);
-			path = ViewModel;
+			path = Conductor;
 			sourceTree = "<group>";
 		};
 		149D697C25F0C4EA0034D30C = {
@@ -150,7 +144,7 @@
 				149D69E925F0F88B0034D30C /* Samples */,
 				149D698225F0C4EA0034D30C /* Euclidean_SequencerApp.swift */,
 				1466B88725F37C0B00C9CBBC /* Model */,
-				1466B88A25F37C2100C9CBBC /* ViewModel */,
+				1466B88A25F37C2100C9CBBC /* Conductor */,
 				1466B88225F37BFD00C9CBBC /* View */,
 				149D698425F0C4EB0034D30C /* Assets.xcassets */,
 			);
@@ -202,16 +196,6 @@
 				1463374525F20EF3004E85DE /* RecordButtonView.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		14B17EC425F6B16D0095CAAA /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				149D69C725F0EECD0034D30C /* MetronomeView.swift */,
-				149D69DF25F0F2220034D30C /* SequencerView.swift */,
-				149D69F025F1028C0034D30C /* PadsView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,12 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1463374B25F21330004E85DE /* TestView.swift in Sources */,
 				149D69C325F0E6040034D30C /* Sample.swift in Sources */,
 				14B17EB525F6A2E90095CAAA /* CostelloReverbView.swift in Sources */,
 				14ED653425F19EBA00F24102 /* MuteButtonView.swift in Sources */,
 				149D69E525F0F23B0034D30C /* MainView.swift in Sources */,
-				146E580F25F38C9F002EE912 /* ParameterSlider.swift in Sources */,
 				14B17EBA25F6AA0D0095CAAA /* ClipperView.swift in Sources */,
 				149D69F125F1028C0034D30C /* PadsView.swift in Sources */,
 				149D699725F0C4EB0034D30C /* ContentView.swift in Sources */,
@@ -347,12 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1463374C25F21330004E85DE /* TestView.swift in Sources */,
 				149D69C425F0E6040034D30C /* Sample.swift in Sources */,
 				14B17EB625F6A2E90095CAAA /* CostelloReverbView.swift in Sources */,
 				14ED653525F19EBA00F24102 /* MuteButtonView.swift in Sources */,
 				149D69E625F0F23B0034D30C /* MainView.swift in Sources */,
-				146E581025F38C9F002EE912 /* ParameterSlider.swift in Sources */,
 				14B17EBB25F6AA0D0095CAAA /* ClipperView.swift in Sources */,
 				149D69F225F1028C0034D30C /* PadsView.swift in Sources */,
 				149D699825F0C4EB0034D30C /* ContentView.swift in Sources */,
